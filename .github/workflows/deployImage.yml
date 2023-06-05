@@ -3,7 +3,10 @@ name: Create and publish a Docker images
 on:
   pull_request:
         types: [review_requested, ready_for_review]
-
+  push:
+    branches:
+      - 'main'
+      - 'zfm**'
 
 env:
   REGISTRY: ghcr.io
