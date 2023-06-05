@@ -1,4 +1,4 @@
-name: Create and publish a Docker img
+name: Create and publish a Docker image
 
 on:
   pull_request:
@@ -12,6 +12,7 @@ env:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     permissions:
       contents: read
       packages: write
