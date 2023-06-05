@@ -2,7 +2,7 @@ name: Create and publish a Docker img
 
 on:
   pull_request:
-    types: [opened, reopened]
+        types: [review_requested, ready_for_review]
 
 
 env:
@@ -12,7 +12,6 @@ env:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
     permissions:
       contents: read
       packages: write
